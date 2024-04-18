@@ -71,4 +71,30 @@
     $sumOfArray = addNumbers(20,43,12,34,12,10);
     echo $sumOfArray; 
 
+    //variadic arguments with also another arguments
+    //one variadic only and it has to be the last argument
+    
+    function studentSection($section, ...$fullname){
+        $txt = "";
+        $len = count($fullname);
+
+        for($i = 0; $i < $len; $i++){
+            $txt = $txt ."Name: " . $fullname[$i] . "<br> Section: " . $section . "<br><br>";
+        }
+        return $txt;
+    }
+
+    echo "<br>";
+    $studentInfo = studentSection("BSIT-1A", "Emman","CoderEly","Frank", "Andrie","Dobert","Frances");
+    echo $studentInfo;
+
+    //function specify return type
+
+    function returnInt($num1,$num2) : int{
+        return $num1 + $num2;
+    }
+
+    echo returnInt(20.2,30.5);
 ?>
+
+
